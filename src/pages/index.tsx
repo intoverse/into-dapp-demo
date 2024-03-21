@@ -18,16 +18,16 @@ export default function HomePage() {
             <img className={styles.logo} src="/images/logo.svg" alt="logo"/>
             <Card>
                 <Tabs>
-                    <TabPane tab={'钱包管理'} key={'wallet'}>
+                    <TabPane tab={'Wallet'} key={'wallet'}>
                         <WalletInfo></WalletInfo>
                     </TabPane>
-                    <TabPane tab={'转账TOX'} key={'transfer'}>
+                    <TabPane tab={'Transfer'} key={'transfer'}>
                         <Transfer></Transfer>
                     </TabPane>
-                    <TabPane tab={'查询余额'} key={'find'}>
+                    <TabPane tab={'Find Balance'} key={'find'}>
                         <Find></Find>
                     </TabPane>
-                    <TabPane tab={'签名'} key={'sign'}>
+                    <TabPane tab={'Sign'} key={'sign'}>
                         <Sign></Sign>
                     </TabPane>
                 </Tabs>
@@ -43,16 +43,16 @@ function WalletInfo(){
     if(!isConnected){
         return (
             <div>
-                <Button type={"primary"} onClick={open}>连接钱包</Button>
+                <Button type={"primary"} onClick={open}>Connect Wallet</Button>
             </div>
         )
     }
     return(
         <div>
-            <p>当前钱包地址:{formatAccount(address)}</p>
-            <p>当前链ID:{chain.id}</p>
-            <p>当前网络:{chain.network}</p>
-            <Button type={"primary"} onClick={disconnect}>断开连接</Button>
+            <p>Wallet address: {formatAccount(address)}</p>
+            <p>Chain id: {chain.id}</p>
+            <p>Network: {chain.network}</p>
+            <Button type={"primary"} onClick={disconnect}>Disconnect</Button>
         </div>
     )
 }
@@ -92,24 +92,24 @@ function Transfer(){
                 autoComplete="off"
             >
                 <Form.Item<FieldType>
-                    label="转账地址"
+                    label="To address"
                     name="address"
-                    rules={[{ required: true, message: '请输入转账地址!' }]}
+                    rules={[{ required: true, message: 'please input address!' }]}
                 >
                     <Input />
                 </Form.Item>
 
                 <Form.Item<FieldType>
-                    label="转账数量"
+                    label="Amount"
                     name="amount"
-                    rules={[{ required: true, message: '请输入转账数量!' }]}
+                    rules={[{ required: true, message: 'please input amount!' }]}
                 >
                     <Input />
                 </Form.Item>
 
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Button type="primary" htmlType="submit">
-                        发送
+                        Transfer
                     </Button>
                 </Form.Item>
             </Form>
@@ -141,16 +141,16 @@ function Find(){
                 autoComplete="off"
             >
                 <Form.Item<FieldType>
-                    label="查询地址"
+                    label="Address"
                     name="address"
-                    rules={[{ required: true, message: '请输入查询地址!' }]}
+                    rules={[{ required: true, message: 'please input address!' }]}
                 >
                     <Input />
                 </Form.Item>
 
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Button type="primary" htmlType="submit">
-                        查询
+                        Find
                     </Button>
                 </Form.Item>
             </Form>
@@ -185,16 +185,16 @@ function Sign(){
                 autoComplete="off"
             >
                 <Form.Item<FieldType>
-                    label="输入内容"
+                    label="Message"
                     name="message"
-                    rules={[{ required: true, message: '请输入内容!' }]}
+                    rules={[{ required: true, message: 'please input message!' }]}
                 >
                     <Input />
                 </Form.Item>
 
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Button type="primary" htmlType="submit">
-                        签名
+                        Sign
                     </Button>
                 </Form.Item>
             </Form>
