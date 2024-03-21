@@ -1,0 +1,106 @@
+.modal_view {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.7);
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  .loading_content {
+    width:80%;
+    max-width: 600px;
+    padding:40px 30px;
+    position:relative;
+    background-color: #fff;
+    border-radius: 20px;
+    @media (max-width: 768px) {
+      width:350px;
+      padding:20px 15px;
+      border-radius: 10px
+    };
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  .loading_title {
+    font-size: 32px;
+    font-family: Axiforma-Bold, Axiforma;
+    font-weight: bold;
+    color: #000;
+    margin-left:30px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-left: 10px
+    }
+  }
+  .desc_container {
+    font-size: 36px;
+    padding-left:150px;
+    @media (max-width: 768px) {
+      padding-left:50px;
+      font-size:18px
+    }
+  }
+  .loading_desc {
+    font-size: 32px;
+    font-family: Axiforma-Bold, Axiforma;
+    font-weight: bold;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    flex: 1;
+    @media (max-width: 768px) {
+      font-size:16px
+    }
+  }
+  .loading_hash_view {
+    font-size:14px;
+    color:#000;
+    margin-top:15px;
+    cursor:pointer;
+    text-decoration:underline;
+    @media (max-width: 768px) {
+      font-size:12px
+    }
+  }
+  .loading_tips {
+    font-size:20px;
+    font-weight: 400;
+    color: #000;
+    margin-top:15px;
+    opacity:0.8;
+    @media (max-width: 768px) {
+      font-size: 14px
+    }
+  }
+  .icon_status {
+    width:112px;
+    height:auto;
+    @media (max-width: 768px) {
+      width:40px
+    }
+  }
+  .icon {
+    width: 30px;
+    height: 30px;
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.row_between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
